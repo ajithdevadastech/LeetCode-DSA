@@ -42,11 +42,12 @@ import json
 # 'UPS']
 
 
-plans = ['EHCO']
-zipcode = '23220'
+plans = ['BEAU']
+zipcode = '48044'
 
 CAurl = ''
-updurl = 'https://updapidev.beaconhealthoptions.com/PhaseII/api/getproviders'
+#updurl = ''
+updurl = ''
 header = {'Content-Type': 'application/json'}
 
 CAarr = []
