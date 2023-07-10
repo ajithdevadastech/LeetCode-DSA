@@ -42,12 +42,13 @@ import json
 # 'UPS']
 
 
-plans = ['BEAU']
-zipcode = '48044'
+plans = ['CHV']
+zipcode = '79705'
+serviceType = ''
 
-CAurl = ''
-#updurl = ''
-updurl = ''
+CAurl = 'https://jarvisdev.beaconhealthoptions.com/services/client-contract/details.service?token=cHJpY2luZ3Rvb2wg'
+#updurl = 'https://updapidev.beaconhealthoptions.com/api/getproviders'
+updurl = 'https://updapi.beaconhealthoptions.com/api/getproviders'
 header = {'Content-Type': 'application/json'}
 
 CAarr = []
@@ -58,7 +59,7 @@ for plan in plans:
     "clientLibrary":"O" 
 }'''
     responseCA = requests.post(CAurl, data=data, headers=header, timeout=10)
-    #print (responseCA.json())
+    print (responseCA.json())
     CAjson = responseCA.json()
     contractCode = CAjson['clientContract']['contractCode']
     associationCodes = CAjson['clientContract']['associationCodes']
@@ -69,9 +70,15 @@ for plan in plans:
     #remove the last comma
     benefitPlanArr = benefitPlanArr[:-1]
 
-    data = '''{"benefitPlanID":"''' + benefitPlanArr + '''","zipCode":"''' + zipcode + '''","radius":"30","name":"","npi":"","taxid":"","networkFlag":1, "sourceApp":"CAS"}'''
+    data = '''{"benefitPlanID":"''' + benefitPlanArr + '''","zipCode":"''' + zipcode + '''","serviceType":"''' + serviceType + '''","radius":"30","name":"","npi":"","taxid":"","networkFlag":1, "sourceApp":"CAS"}'''
     response = requests.post(updurl, data=data, headers=header, timeout=60)
+    UPDjson = response.json()
+    print(UPDjson)
+    npi = []
+    for i in UPDjson:
+        npi.append(i['npi'])
     print (benefitPlanArr + " : " + str(response.status_code))
+    print (npi)
 
 
 # for plan in plans:
