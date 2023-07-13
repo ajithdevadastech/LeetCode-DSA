@@ -13,7 +13,7 @@ class Solution(object):
         f = 0 #first index
         e = 0 #last index
 
-        searchElem = s2[0]
+        searchElem = ""
         startElem = s2[0]
 
         i = 0 #search loop variable for s1
@@ -30,7 +30,7 @@ class Solution(object):
         while True:
             if i > len(s1) - 1:
                 break
-            if s1[i] == startElem:
+            if s1[i] == startElem and startElem != searchElem:
                 sindex = i
                 dictS2 = {}
                 dictS2[startElem] = 1
@@ -47,7 +47,10 @@ class Solution(object):
             elif s1[i] != searchElem:
                 i = i + 1
             else:
-                dictS2[searchElem] = 1
+                if searchElem in dictS2.keys():
+                    dictS2[searchElem] = dictS2[searchElem] + 1
+                else:
+                    dictS2[searchElem] = 1
                 j = j + 1
                 if j < len(s2):
                     i = i + 1
