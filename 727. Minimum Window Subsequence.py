@@ -39,6 +39,9 @@ class Solution(object):
                 if j < len(s2):
                     i = i + 1
                     searchElem = s2[j]
+                elif sum(dictS2.values()) == len(s2) and s1[i] == s2[-1]:
+                    found = True
+                    eindex = i
                 else:
                     break
             elif s1[i] != searchElem:
@@ -75,8 +78,8 @@ o = Solution()
 #s1 = "abccbxddebdde"
 #s2 = "u"
 
-s1 = "abcdebdde"
-s2 = "bde"
+s1 = "jmeqksfrsdcmsiwvaovztaqenprpvnbstl"
+s2 = "k"
 print(o.minWindow(s1, s2))
 
 
