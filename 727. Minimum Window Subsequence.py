@@ -81,8 +81,8 @@ o = Solution()
 #s1 = "abccbxddebdde"
 #s2 = "u"
 
-s1 = "jmeqksfrsdcmsiwvaovztaqenprpvnbstl"
-s2 = "k"
+s1 = "fgrqsqsnodwmxzkzxwqegkndaa"
+s2 = "kzed"
 print(o.minWindow(s1, s2))
 
 
