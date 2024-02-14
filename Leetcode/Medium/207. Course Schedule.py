@@ -53,11 +53,11 @@ class Solution(object):
         self.neighbors = None
         self.state = None
         self.flag = None
-
+        return True
 
 o = Solution()
-numCourses = 2
-prerequisites = [[1,0],[0,1]]
+numCourses = 4
+prerequisites = [[1,0],[2,1],[0,2],[0,3]]
 
 print(o.canFinish(numCourses, prerequisites))
 
