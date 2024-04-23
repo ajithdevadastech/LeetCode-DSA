@@ -18,7 +18,10 @@ class Solution(object):
                 rcf = rcf - 1
             else:
                 rcf = rcf + 1
-            arrf.append(mef)
+            if rcf == 0:
+                arrf.append(-1)
+            else:
+                arrf.append(mef)
             histf = nums[i]
             i = i + 1
 
@@ -35,7 +38,10 @@ class Solution(object):
                 rcr = rcr - 1
             else:
                 rcr = rcr + 1
-            arrr.append(mer)
+            if rcr == 0:
+                arrr.append(-1)
+            else:
+                arrr.append(mer)
             histr = nums[i]
             i = i - 1
 
