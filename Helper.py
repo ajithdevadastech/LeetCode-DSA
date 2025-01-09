@@ -1,6 +1,3 @@
-nums = 'abcdefghijk'
+s = 'Ajith'
 
-print(4**0)
-
-for i in range(10):
-    print(4**i)
+print (s[1:])
