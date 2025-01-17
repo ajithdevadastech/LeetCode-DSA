@@ -1,3 +1,3 @@
 s = 'Ajith'
 
-print (s[1:])
+print (s[1:3])
