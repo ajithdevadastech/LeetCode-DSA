@@ -21,4 +21,14 @@ root.left.left = TreeNode(4)
 root.left.right = TreeNode(5)
 
 o = Solution()
+#print(o.PreOrderTraversal(root))
+
+root = TreeNode(10)
+root.left = TreeNode(7)
+root.right = TreeNode(13)
+root.left.left = TreeNode(4)
+root.left.right = TreeNode(9)
+root.right.left = TreeNode(11)
+root.right.right = TreeNode(16)
+
 print(o.PreOrderTraversal(root))
