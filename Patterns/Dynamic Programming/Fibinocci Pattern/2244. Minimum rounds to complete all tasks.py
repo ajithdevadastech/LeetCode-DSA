@@ -1,5 +1,5 @@
 
-import math
+from collections import Counter
 class Solution(object):
     def minimumRounds(self, tasks):
         """
@@ -7,38 +7,23 @@ class Solution(object):
         :rtype: int
         """
 
-        self.memo = {}
+        if len(tasks) == 1:
+            return -1
 
-        #populate tasks in has table
-
-        self.tasks = {}
-        for t in tasks:
-            if t not in self.tasks.keys():
-                self.tasks[t] = 1
-            else:
-                self.tasks[t] += 1
-
-        def helper(count):
-            if count == 1:
-                return float('inf')
-            elif count == 2 or count == 3:
-                return 1
-            else:
-                if count in self.memo.keys():
-                    return self.memo[count]
-                else:
-                    self.memo[count] = min(helper(count-2), helper(count-3)) + 1
-                    return self.memo[count]
+        d = Counter(tasks)
 
         r = 0
-        for t in self.tasks.keys():
-            k = helper(self.tasks[t])
-            if k == float('inf'):
+        for k in d.keys():
+            if d[k] == 1:
                 return -1
+            if d[k] % 3 == 0:
+                r = r + int(d[k]/3)
             else:
-                r = r + k
-
+                r = r + int(d[k]/3) + 1
         return r
+
+
+
 
 o = Solution()
 tasks = [2,2,3,3,2,4,4,4,4,4]
