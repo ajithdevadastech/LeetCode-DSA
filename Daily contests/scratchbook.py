@@ -17,7 +17,5 @@
 #
 # print(1478 - 182)
 
-arr = []
-arr1 = [1,3,4,5]
-
-print(arr < arr1)
+s = 'Ajith'
+print(s[-1])
