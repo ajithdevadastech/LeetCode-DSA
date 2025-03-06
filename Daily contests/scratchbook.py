@@ -17,5 +17,8 @@
 #
 # print(1478 - 182)
 
-s = 'Ajith'
-print(s[-1])
+a = [1, 2,  4,  5,  3,  6,  7]
+print(a[-2])
+print(a.index(3))
+print(a[1:4])
+print(a[4:-1])
