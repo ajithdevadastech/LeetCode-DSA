@@ -31,5 +31,9 @@
 # print(nums2[34:])
 
 
-for n in range(2,5):
-    print(n)
+# for n in range(2,5):
+#     print(n)
+
+s = 'Ajith'
+print (s[1:])
+print(s[:-1])
